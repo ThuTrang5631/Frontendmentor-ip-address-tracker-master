@@ -7,26 +7,47 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Rubik:ital,wght@0,400;0,500;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
-
-
-
+  <div class="container-app">
+    <div class="ip-tracker-top">
+      <div class="ip-tracker-search">
+        <h1 class="tracker-top-title">IP Address Tracker</h1>
+        <form class="tracker-top-form">
+          <input class="tracker-top-input text-ellipsis" type="text" placeholder="Search for any IP address or domain">
+          <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
+        </form>
+      </div>
+      <div class="tracker-top-results">
+        <div class="tracker-result">
+          <h6 class="result-title">IP ADDRESS</h6>
+          <p class="result-desc">192.212.174.101</p>
+        </div>
+        <div class="tracker-result">
+          <h6 class="result-title">LOCATION</h6>
+          <p class="result-desc">Brooklyn, NY 1001</p>
+        </div>
+        <div class="tracker-result">
+          <h6 class="result-title">TIMEZONE</h6>
+          <p class="result-desc">UTC-05:00</p>
+        </div>
+        <div class="tracker-result">
+          <h6 class="result-title">ISP</h6>
+          <p class="result-desc">SpaceX Starlink</p>
+        </div>
+      </div>
+    </div>
+    <div class="ip-tracker-bottom"></div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://www.linkedin.com/in/thutrang5631/" target="_blank">Thu Trang</a>.
