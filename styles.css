@@ -44,8 +44,8 @@ p {
   background-size: cover;
   background-position: center;
   padding: 25px 10px 0;
-  height: 30vh;
   width: 100%;
+  height: calc(100vw * 320 / 1440);
 }
 
 .tracker-top-title {
@@ -101,10 +101,10 @@ p {
 }
 
 .tracker-top-results {
-  width: 80%;
+  width: 75%;
   background-color: var(--white);
   border-radius: 10px;
-  padding: 15px;
+  padding: 30px;
   display: flex;
   margin: 0 auto;
   position: absolute;
@@ -114,7 +114,11 @@ p {
 .tracker-result {
   width: 25%;
   border-right: 1px solid var(--dark-gray);
-  padding: 30px;
+  padding: 0 30px;
+}
+
+.tracker-result:first-child {
+  padding: 0;
 }
 
 .tracker-result:last-child {
@@ -131,8 +135,8 @@ p {
 }
 
 .result-desc {
-  color: var(--black);
-  font-size: 24px;
+  color: var(--very-dark-gray);
+  font-size: 22px;
   font-weight: 700;
   font-family: "Rubik";
   line-height: 30px;
@@ -149,4 +153,81 @@ p {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 992px) {
+  .tracker-top-results {
+    width: 80%;
+    padding: 20px;
+    top: 80%;
+  }
+
+  .tracker-top-input {
+    font-size: 15px;
+  }
+
+  .result-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .result-desc {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tracker-top-title {
+    font-size: 20px;
+  }
+
+  .ip-tracker-search {
+    height: calc(100vw * 400 / 1440);
+    padding-inline: 0;
+  }
+
+  .tracker-top-form {
+    width: 90%;
+  }
+
+  .tracker-top-results {
+    width: 90%;
+  }
+
+  .tracker-top-results {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tracker-result {
+    width: 100%;
+    border-right: none;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .tracker-result:last-child {
+    margin-bottom: 0;
+  }
+
+  .result-title {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .ip-tracker-bottom {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ip-tracker-search {
+    height: calc(100vw * 550 / 1440);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .ip-tracker-search {
+    height: calc(100vw * 650 / 1440);
+  }
 }
