@@ -14,6 +14,10 @@
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
 
 </head>
 
@@ -23,7 +27,8 @@
       <div class="ip-tracker-search">
         <h1 class="tracker-top-title">IP Address Tracker</h1>
         <form class="tracker-top-form">
-          <input class="tracker-top-input text-ellipsis" type="text" placeholder="Search for any IP address or domain">
+          <input id="search-input" class="tracker-top-input text-ellipsis" type="text"
+            placeholder="Search for any IP address or domain">
           <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
         </form>
       </div>
@@ -46,12 +51,19 @@
         </div>
       </div>
     </div>
-    <div class="ip-tracker-bottom"></div>
+    <div id="map" class="ip-tracker-bottom"></div>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://www.linkedin.com/in/thutrang5631/" target="_blank">Thu Trang</a>.
   </div>
 </body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="main.js"></script>
+
+
+
+
 
 </html>
