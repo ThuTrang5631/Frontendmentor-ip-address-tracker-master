@@ -1,6 +1,13 @@
 const API_KEY = "at_WiUYlWR1VosF8jomi3AplaoCjJuz4";
 const searchInputEle = document.getElementById("search-input");
 const form = document.querySelector("form");
+
+//get element of results
+const ipAddressEle = document.getElementById("ip_address");
+const locationEle = document.getElementById("location");
+const timezoneEle = document.getElementById("timezone");
+const ispEle = document.getElementById("isp");
+
 // Default ip address on load
 const defaultIp = "";
 
@@ -26,6 +33,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const searchValue = searchInputEle.value.trim();
+  fetchData(searchValue);
   console.log("value", searchValue);
 });
 
@@ -36,6 +44,10 @@ const fetchData = (param) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      ipAddressEle.innerHTML = data.ip;
+      locationEle.innerHTML = `${data.location.region}, ${data.location.country}`;
+      timezoneEle.innerHTML = `UTC ${data.location.timezone}`;
+      ispEle.innerHTML = data.isp;
     })
     .catch((error) => console.log(error));
 };
