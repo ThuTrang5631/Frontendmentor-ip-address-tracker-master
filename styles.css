@@ -66,7 +66,7 @@ p {
   position: relative;
   width: 35%;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
 .tracker-top-input {
@@ -162,6 +162,28 @@ p {
   font-family: "Rubik";
   font-weight: 500;
   color: var(--very-dark-gray);
+}
+
+.wrap-form-validate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-validate {
+  font-size: 13px;
+  color: #f45050;
+  background-color: #f0f0f0;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.block-none {
+  display: none;
+}
+
+.block {
+  display: block;
 }
 
 @media screen and (max-width: 992px) {

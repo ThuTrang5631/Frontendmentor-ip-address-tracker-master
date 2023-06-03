@@ -1,15 +1,23 @@
 const API_KEY = "at_WiUYlWR1VosF8jomi3AplaoCjJuz4";
+
+//get element
 const searchInputEle = document.getElementById("search-input");
 const form = document.querySelector("form");
-
-//get element of results
 const ipAddressEle = document.getElementById("ip_address");
 const locationEle = document.getElementById("location");
 const timezoneEle = document.getElementById("timezone");
 const ispEle = document.getElementById("isp");
+const validateEle = document.querySelector("small");
 
 // Default ip address on load
 const defaultIp = "";
+
+// regrex validation IP ADDRESS AND DOMAIN ADDRESS
+const regexIpAddress =
+  /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+
+const regexDomain =
+  /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
 
 const mapLocation = (lat, lng) => {
   let map = L.map("map").setView([lat, lng], 17);
@@ -35,7 +43,19 @@ const mapLocation = (lat, lng) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchInputEle.value.trim();
-  fetchData(searchValue);
+  if (regexIpAddress.test(searchValue)) {
+    fetchData(searchValue);
+    validateEle.classList.remove("block");
+    validateEle.classList.add("block-none");
+  } else if (regexDomain.test(searchValue)) {
+    fetchData(searchValue);
+    validateEle.classList.remove("block");
+    validateEle.classList.add("block-none");
+  } else {
+    validateEle.classList.remove("block-none");
+    validateEle.classList.add("block");
+    console.log("false");
+  }
 });
 
 const fetchData = (param) => {

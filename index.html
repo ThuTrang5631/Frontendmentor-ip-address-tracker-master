@@ -26,11 +26,14 @@
     <div class="ip-tracker-top">
       <div class="ip-tracker-search">
         <h1 class="tracker-top-title">IP Address Tracker</h1>
-        <form class="tracker-top-form">
-          <input id="search-input" class="tracker-top-input text-ellipsis" type="text"
-            placeholder="Search for any IP address or domain">
-          <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
-        </form>
+        <div class="wrap-form-validate">
+          <form class="tracker-top-form">
+            <input id="search-input" class="tracker-top-input text-ellipsis" type="text"
+              placeholder="Search for any IP address or domain">
+            <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
+          </form>
+          <small class="form-validate block-none">IP Address or domain invalid. Please enter again </small>
+        </div>
       </div>
       <div class="tracker-top-results">
         <div class="tracker-result">
