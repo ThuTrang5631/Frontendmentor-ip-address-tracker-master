@@ -31,6 +31,10 @@ p {
   margin: 0;
 }
 
+.container-app {
+  margin-bottom: 30px;
+}
+
 .ip-tracker-top {
   position: relative;
   display: flex;
@@ -68,7 +72,7 @@ p {
 .tracker-top-input {
   padding: 15px;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   font-size: 18px;
   cursor: pointer;
   font-family: "Rubik";
@@ -81,14 +85,10 @@ p {
   padding: 15px;
   border-radius: 0 15px 15px 0;
   background-color: var(--black);
-  position: absolute;
-  right: 0;
   height: 51.33px;
   cursor: pointer;
   outline: none;
   border: none;
-  top: 0;
-  bottom: 0;
 }
 
 .tracker-top-button:hover {
@@ -145,7 +145,7 @@ p {
 
 .ip-tracker-bottom {
   width: 100%;
-  height: 50vh;
+  height: 100vh;
 }
 
 .text-ellipsis {
@@ -158,6 +158,10 @@ p {
 
 .attribution {
   text-align: center;
+  font-size: 24px;
+  font-family: "Rubik";
+  font-weight: 500;
+  color: var(--very-dark-gray);
 }
 
 @media screen and (max-width: 992px) {
@@ -218,10 +222,6 @@ p {
   .result-title {
     font-size: 12px;
     margin-bottom: 5px;
-  }
-
-  .ip-tracker-bottom {
-    height: 100vh;
   }
 }
 
