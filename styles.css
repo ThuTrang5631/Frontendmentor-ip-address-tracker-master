@@ -31,8 +31,14 @@ p {
   margin: 0;
 }
 
+.container {
+  padding-bottom: 40px;
+}
+
 .container-app {
   margin-bottom: 30px;
+  position: relative;
+  z-index: 999;
 }
 
 .ip-tracker-top {
@@ -109,7 +115,7 @@ p {
   margin: 0 auto;
   position: absolute;
   top: 65%;
-  z-index: 999;
+  z-index: 700;
 }
 
 .tracker-result {
@@ -162,6 +168,7 @@ p {
   font-family: "Rubik";
   font-weight: 500;
   color: var(--very-dark-gray);
+  padding-inline: 10px;
 }
 
 .wrap-form-validate {
@@ -257,4 +264,70 @@ p {
   .ip-tracker-search {
     height: calc(100vw * 700 / 1440);
   }
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2000;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 20%;
+  height: 15%;
+  border-radius: 0.5rem;
+  z-index: 999;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.modal-desc {
+  font-size: 15px;
+  font-family: "Rubik";
+  font-weight: 500;
+  text-align: center;
+  color: #111;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }

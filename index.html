@@ -22,51 +22,54 @@
 </head>
 
 <body>
-  <div class="container-app">
-    <div class="ip-tracker-top">
-      <div class="ip-tracker-search">
-        <h1 class="tracker-top-title">IP Address Tracker</h1>
-        <div class="wrap-form-validate">
-          <form class="tracker-top-form">
-            <input id="search-input" class="tracker-top-input text-ellipsis" type="text"
-              placeholder="Search for any IP address or domain">
-            <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
-          </form>
-          <small class="form-validate block-none">IP Address or domain invalid. Please enter again </small>
+  <main class="container">
+    <div class="container-app">
+      <div class="ip-tracker-top">
+        <div class="ip-tracker-search">
+          <h1 class="tracker-top-title">IP Address Tracker</h1>
+          <div class="wrap-form-validate">
+            <form class="tracker-top-form">
+              <input id="search-input" class="tracker-top-input text-ellipsis" type="text"
+                placeholder="Search for any IP address or domain">
+              <button class="tracker-top-button"><img class="icon-button" src="images/icon-arrow.svg"></button>
+            </form>
+          </div>
+        </div>
+        <div class="tracker-top-results">
+          <div class="tracker-result">
+            <h6 class="result-title text-ellipsis">IP ADDRESS</h6>
+            <p id="ip_address" class="result-desc"></p>
+          </div>
+          <div class="tracker-result">
+            <h6 class="result-title text-ellipsis">LOCATION</h6>
+            <p id="location" class="result-desc"></p>
+          </div>
+          <div class="tracker-result">
+            <h6 class="result-title text-ellipsis">TIMEZONE</h6>
+            <p id="timezone" class="result-desc"></p>
+          </div>
+          <div class="tracker-result">
+            <h6 class="result-title text-ellipsis">ISP</h6>
+            <p id="isp" class="result-desc"></p>
+          </div>
         </div>
       </div>
-      <div class="tracker-top-results">
-        <div class="tracker-result">
-          <h6 class="result-title text-ellipsis">IP ADDRESS</h6>
-          <p id="ip_address" class="result-desc"></p>
-        </div>
-        <div class="tracker-result">
-          <h6 class="result-title text-ellipsis">LOCATION</h6>
-          <p id="location" class="result-desc"></p>
-        </div>
-        <div class="tracker-result">
-          <h6 class="result-title text-ellipsis">TIMEZONE</h6>
-          <p id="timezone" class="result-desc"></p>
-        </div>
-        <div class="tracker-result">
-          <h6 class="result-title text-ellipsis">ISP</h6>
-          <p id="isp" class="result-desc"></p>
-        </div>
+      <div id="map" class="ip-tracker-bottom"></div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <span onclick="toggleModal()" class="close-button">×</span>
+        <p class="modal-desc">IP address or domain invalid. Please enter again</p>
       </div>
     </div>
-    <div id="map" class="ip-tracker-bottom"></div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.linkedin.com/in/thutrang5631/" target="_blank">Thu Trang</a>.
-  </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.linkedin.com/in/thutrang5631/" target="_blank">Thu Trang</a>.
+    </div>
+  </main>
 </body>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="main.js"></script>
-
-
-
-
 
 </html>

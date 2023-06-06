@@ -8,6 +8,8 @@ const locationEle = document.getElementById("location");
 const timezoneEle = document.getElementById("timezone");
 const ispEle = document.getElementById("isp");
 const validateEle = document.querySelector("small");
+const modal = document.querySelector(".modal");
+const closeButton = document.querySelector(".close-button");
 
 // Default ip address on load
 const defaultIp = "";
@@ -40,21 +42,26 @@ const mapLocation = (lat, lng) => {
   L.marker([lat, lng], { icon: locationIcon }).addTo(map);
 };
 
+const toggleModal = () => {
+  modal.classList.toggle("show-modal");
+};
+
+const windowOnClick = (e) => {
+  if (e.target === modal) {
+    toggleModal();
+  }
+};
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchValue = searchInputEle.value.trim();
   if (regexIpAddress.test(searchValue)) {
     fetchData(searchValue);
-    validateEle.classList.remove("block");
-    validateEle.classList.add("block-none");
   } else if (regexDomain.test(searchValue)) {
     fetchData(searchValue);
-    validateEle.classList.remove("block");
-    validateEle.classList.add("block-none");
   } else {
-    validateEle.classList.remove("block-none");
-    validateEle.classList.add("block");
-    console.log("false");
+    toggleModal();
+    window.addEventListener("click", windowOnClick);
   }
 });
 
@@ -64,7 +71,7 @@ const fetchData = (param) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log("data", data);
       ipAddressEle.innerHTML = data.ip;
       locationEle.innerHTML = `${data.location.region}, ${data.location.country} ${data.location.postalCode}`;
       timezoneEle.innerHTML = `UTC ${data.location.timezone}`;
