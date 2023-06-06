@@ -21,6 +21,14 @@ const regexIpAddress =
 const regexDomain =
   /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/g;
 
+// check map already initiated or not
+const initMap = () => {
+  let container = L.DomUtil.get("map");
+  if (container != null) {
+    container._leaflet_id = null;
+  }
+};
+
 const mapLocation = (lat, lng) => {
   let map = L.map("map").setView([lat, lng], 17);
 
@@ -69,16 +77,26 @@ const fetchData = (param) => {
   fetch(
     `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${param}&domain=${param}`
   )
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("An Error Occured");
+      }
+      return res.json();
+    })
     .then((data) => {
       console.log("data", data);
       ipAddressEle.innerHTML = data.ip;
       locationEle.innerHTML = `${data.location.region}, ${data.location.country} ${data.location.postalCode}`;
       timezoneEle.innerHTML = `UTC ${data.location.timezone}`;
       ispEle.innerHTML = data.isp;
+      initMap();
       mapLocation(data.location.lat, data.location.lng);
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      console.log(error);
+      toggleModal();
+      window.addEventListener("click", windowOnClick);
+    });
 };
 
 document.addEventListener("DOMContentLoaded", fetchData(defaultIp));
