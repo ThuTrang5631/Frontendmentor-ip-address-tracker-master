@@ -27,11 +27,12 @@ Users should be able to:
 ### Screenshot
 **Desktop:**
 
-![image](https://github.com/ThuTrang5631/Frontendmentor-ip-address-tracker-master/assets/70875419/9ef24fcb-601d-4e7b-b249-e540de5cc670)
+![image](https://github.com/ThuTrang5631/Frontendmentor-ip-address-tracker-master/assets/70875419/8fe44c3f-7885-4b26-bb2e-9c74a75328da)
 
 **Mobile:**
 
-![image](https://github.com/ThuTrang5631/Frontendmentor-ip-address-tracker-master/assets/70875419/8d908453-08e6-436c-91c5-652e5215d46c)
+![image](https://github.com/ThuTrang5631/Frontendmentor-ip-address-tracker-master/assets/70875419/84e9905d-4593-4d1f-8621-c52be5d9f3a9)
+
 
 
 ### Links
